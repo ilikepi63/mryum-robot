@@ -15,7 +15,7 @@ function App() {
     setCurrentCommand("");
 
     // first update the list of commands
-    setCommands([command, ...commands]);
+    setCommands([command, ...commands].slice(0,10));
 
     // then we apply the command to set Robot
     const result = mapCommandsAndRobot(robot, command.split(" "));
@@ -23,8 +23,6 @@ function App() {
     if (result && result.robot) {
       setRobot(result.robot);
     }
-
-    console.log(robot);
   }
 
 
