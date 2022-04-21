@@ -13,6 +13,18 @@ export class RobotState {
 
     constructor() { }
 
+    get x():number | undefined{
+        return this._x;
+    }
+
+    get y(): number | undefined{
+        return this._y;
+    }
+
+    get f(): Direction | undefined{
+        return this._f?.getDirection();
+    }
+
     place(x: number, y: number, f: Direction): RobotState {
 
         this.hasBeenInitialized = true;
